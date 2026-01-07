@@ -1,15 +1,17 @@
-cmake_minimum_required(VERSION 3.15)
-project(Pseudo-kiosk)
+cmake_minimum_required(VERSION 3.20)
+project(kiosk_demo C)
+
 set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Werror -g")
-
-
-
-
 include_directories(header)
-
-set(MAIN_SOURCES
+# launcher
+add_executable(launcher
         src/launcher.c
-)
+        header/launcher.h)
 
-add_executable(main ${MAIN_SOURCES})
+# kiosk
+add_executable(kiosk
+        src/kiosk.c
+        header/kiosk.h)
+
+# WinAPI libs (souvent implicites, mais on force proprement)
+target_link_libraries(kiosk user32 gdi32)
