@@ -5,6 +5,8 @@
 // kiosk.h
 // Déclaration des fonctions pour l'appli "kiosk"
 
+// kiosk.h
+// kiosk.h
 #ifndef KIOSK_H
 #define KIOSK_H
 
@@ -12,10 +14,10 @@
 
 #define KIOSK_CLASS_NAME L"KioskWindowClass"
 
-// Procédure de fenêtre
+// Procédure de fenêtre principale
 LRESULT CALLBACK KioskWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
-// Création de la fenêtre plein écran "kiosk"
+// Création de la fenêtre kiosk
 HWND create_kiosk_window(HINSTANCE hInstance);
 
 // Boucle de messages
