@@ -11,7 +11,13 @@ add_executable(launcher
 # kiosk
 add_executable(kiosk
         src/kiosk.c
-        header/kiosk.h)
+        header/kiosk.h
+        header/pong_kiosk.h)
 
 # WinAPI libs (souvent implicites, mais on force proprement)
 target_link_libraries(kiosk user32 gdi32)
+
+add_executable(pong_kiosk
+        src/pong_kiosk.c
+        header/pong_kiosk.h)
+target_link_libraries(pong_kiosk user32 gdi32)
